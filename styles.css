@@ -1,0 +1,68 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #000000, #1a1a1a);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Glowing Container */
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 50px rgba(255, 255, 255, 0.1);
+}
+
+/* Glowing Text */
+.glow-text {
+    font-size: 2rem;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+}
+
+/* Glowing Input Fields */
+.glow-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    outline: none;
+    transition: 0.3s;
+}
+
+.glow-input:focus {
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+}
+
+/* Glowing Button */
+.glow-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #ff007f, #7f00ff);
+    box-shadow: 0 0 20px #ff007f, 0 0 40px #7f00ff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 30px #ff007f, 0 0 60px #7f00ff;
+}
+
+/* Glowing Container Shadow */
+.container:hover {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5), 0 0 80px rgba(255, 255, 255, 0.3);
+  }
+  
