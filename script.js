@@ -5,13 +5,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
 
-    // Check if user already signed in
+    // Check if user is already signed in
     const savedUsername = localStorage.getItem("username");
     const savedPassword = localStorage.getItem("password");
 
     if (savedUsername && savedPassword) {
         formTitle.textContent = "Login to Continue";
         formButton.textContent = "Login";
+    } else {
+        formTitle.textContent = "Sign In to Get Started";
+        formButton.textContent = "Sign In";
     }
 
     // Handle form submission
@@ -22,18 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const password = passwordInput.value.trim();
 
         if (!savedUsername || !savedPassword) {
-            // Save credentials for the first time
+            // Save user credentials (sign in)
             localStorage.setItem("username", username);
             localStorage.setItem("password", password);
-            alert("Sign-In successful! Please log in next time.");
-            window.location.reload();
+            window.location.reload(); // Reload to switch to login mode
         } else {
             // Validate login
             if (username === savedUsername && password === savedPassword) {
-                alert("Login successful! Redirecting to Google...");
+                // Redirect to Google
                 window.location.href = "https://www.google.com";
-            } else {
-                alert("Invalid credentials! Please try again.");
             }
         }
     });
