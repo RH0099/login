@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In / Login</title>
+    <title>Login Panel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="glow-text">Welcome</h1>
-        <p class="glow-text" id="form-title">Sign In to Get Started</p>
-        <form id="authForm">
-            <input type="text" id="username" placeholder="Enter your name" required class="glow-input">
-            <input type="password" id="password" placeholder="Enter your password" required class="glow-input">
-            <button type="submit" class="glow-button" id="form-button">Sign In</button>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Enter Gmail" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
         </form>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
